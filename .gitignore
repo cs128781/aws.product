@@ -1,0 +1,4 @@
+# exclude terraform plan files
+terraform.tfstate.backup
+terraform.tfstate
+.terraform

@@ -6,7 +6,7 @@ provider "aws" {
 }
 
 module "networks" {
-  source = "git::https://cs128781:Deco2051@github.com:cs128781/aws.network.git"
+  source = "git::https://cs128781:epoac477evf1o06f@github.com:cs128781/aws.network.git"
   region=var.region
   key_name=var.key_name
   vpc_cidr=var.vpc_cidr
@@ -16,7 +16,7 @@ module "networks" {
 }
 
 module "rds" {
-  source = "git::https://cs128781:Deco2051@github.com:cs128781/aws.rds.git"
+  source = "git::https://cs128781:epoac477evf1o06f@github.com:cs128781/aws.rds.git"
   key_name=var.key_name
   Rsubnet1=module.networks.subtnet1_out
   Rsubnet2=module.networks.subtnet2_out
@@ -25,7 +25,7 @@ module "rds" {
 }
 module "bastion" {
   key_name=var.key_name
-  source = "git::https://cs128781:Deco2051@github.com:cs128781/aws.bastion.git"
+  source = "git::https://cs128781:epoac477evf1o06f@github.com:cs128781/aws.bastion.git"
   Rsubnet1=module.networks.subtnet1_out
   Rvpcid=module.networks.vpc_id_out
   is_local=var.rds_is_local
